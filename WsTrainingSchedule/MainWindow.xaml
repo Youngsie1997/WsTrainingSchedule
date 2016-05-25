@@ -1,0 +1,40 @@
+﻿<Window x:Class="WsTrainingSchedule.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WsTrainingSchedule"
+        mc:Ignorable="d"
+        Title="WsScheduleViewer" Height="350" Width="735" Icon="wstrainingicon.ico" SizeToContent="Height">
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Button x:Name="btSqlQuerry" Content="Show Schedule For:" VerticalAlignment="Top" Height="21.96" Click="tbSqlQuerry_Click" Margin="0,0,331.833,0"/>
+        <DataGrid x:Name="dgSchedule" Margin="0,21.96,0,0" RenderTransformOrigin="0.833,0.359" IsReadOnly="True"    AlternationCount="2" AlternatingRowBackground="#FFEC6C6D" RowBackground="#FF2991CC" AutoGeneratingColumn="dgSchedule_AutoGeneratingColumn" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False"/>
+        <ComboBox x:Name="cbName" HorizontalAlignment="Right" VerticalAlignment="Top" Width="166.5" IsReadOnly="True" Margin="0,0,165.333,0" SelectedIndex="0">
+            <ComboBoxItem x:Name="Chloe" Content="Chloe" Background="#FFEC6C6D"/>
+            <ComboBoxItem x:Name="Julie" Content="Julie" Background="#FFEA8888"/>
+            <ComboBoxItem x:Name="Johnny" Content="Johnny" Background="#FF2991CC"/>
+            <ComboBoxItem x:Name="Liam" Content="Liam" Background="#FF2991CC"/>
+            <ComboBoxItem x:Name="Everyone" Content="Everyone"/>
+        </ComboBox>
+        <ComboBox x:Name="cbDay" HorizontalAlignment="Right" VerticalAlignment="Top" Width="165.333" IsReadOnly="True" SelectedIndex="0">
+            <ComboBoxItem x:Name="Monday" Content="Monday"/>
+            <ComboBoxItem x:Name="Tuesday" Content="Tuesday"/>
+            <ComboBoxItem x:Name="Wednesday"  Content="Wednesday"/>
+            <ComboBoxItem x:Name="Thursday" Content="Thursday"/>
+            <ComboBoxItem x:Name="Friday" Content="Friday"/>
+            <ComboBoxItem x:Name="All" Content="All"/>
+        </ComboBox>
+    </Grid>
+
+</Window>
+    
